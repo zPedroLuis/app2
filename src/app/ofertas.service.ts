@@ -55,6 +55,16 @@ export class OfertasService {
 
 
   public getOfertas(): Array<Oferta> {
+                    // ou Oferta[]
     return this.ofertas
+  }
+
+  public getOfertas2(): Promise<Oferta[]> {
+                    // ou Promise<Array<Oferta>>
+    return new Promise((resolve, reject) => {
+      //Algum tipo de processamento, que ao finalizar, chama a função resolve ou a função reject
+      console.log("Sera que passou por aqui?")
+      resolve(this.ofertas)
+    })
   }
 }
